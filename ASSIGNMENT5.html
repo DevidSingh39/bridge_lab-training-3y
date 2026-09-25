@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Assignment Combined</title>
+  <style>
+    body { margin:0; font-family:Arial, sans-serif; background:#f9f9f9; color:#333; }
+    header, footer { background:#222; color:#fff; padding:1em; text-align:center; position:sticky; top:0; }
+    nav a { margin:0 1em; color:#fff; text-decoration:none; }
+    footer { position:sticky; bottom:0; }
+
+    /* Portfolio */
+    #portfolio { padding:2em; }
+    #portfolio img { width:150px; border-radius:50%; }
+
+    /* Informational */
+    #info section { padding:50px; color:#fff; }
+    .linear { background:linear-gradient(to right, #ff7e5f, #feb47b); background-attachment:fixed; }
+    .radial { background:radial-gradient(circle, #43cea2, #185a9d); background-attachment:fixed; }
+
+    /* Team */
+    #team { display:flex; flex-wrap:wrap; }
+    .card { flex:1; margin:10px; padding:20px; border:1px solid #ccc; border-radius:10px; box-shadow:2px 2px 5px #aaa; }
+    .lead { background:#ffe0b2; border:2px solid #f57c00; }
+    @media(max-width:600px){ #team{flex-direction:column;} }
+
+    /* Article */
+    #article p { margin:20px 0; }
+    #article p::first-letter { font-size:200%; }
+    #article p::first-line { font-weight:bold; }
+    mark { background:yellow; }
+    blockquote { border-left:5px solid #333; background:#eee; padding:10px; }
+
+    /* Pricing */
+    #pricing { display:flex; }
+    .plan { flex:1; margin:10px; padding:20px; border:1px solid #ccc; transition:0.3s; }
+    .plan:hover { transform:scale(1.05); background:#f0f0f0; }
+    .popular { border:2px solid #f57c00; }
+
+    /* Gallery */
+    #gallery { display:flex; flex-wrap:wrap; }
+    #gallery img { width:30%; margin:1%; border-radius:10px; box-shadow:2px 2px 5px #aaa; transition:0.3s; }
+    #gallery img:hover { transform:scale(1.1); }
+    @media(max-width:600px){ #gallery img{width:100%;} }
+
+    /* Contact */
+    #contact { display:flex; justify-content:center; align-items:center; padding:2em; }
+    form { display:flex; flex-direction:column; width:300px; }
+    input, textarea { margin:10px 0; padding:10px; border-radius:5px; box-shadow:1px 1px 3px #aaa; }
+    input:focus, textarea:focus { border:2px solid #007BFF; }
+
+    /* Dashboard */
+    #dashboard { display:flex; margin-top:20px; }
+    #dashboard aside { width:200px; background:#eee; min-height:100vh; }
+    #dashboard main { flex:1; display:flex; gap:20px; padding:20px; }
+    .box { flex:1; background:#fff; box-shadow:2px 2px 5px #aaa; padding:20px; }
+    @media(max-width:600px){ #dashboard{flex-direction:column;} #dashboard aside{width:100%;} }
+
+    /* Newspaper */
+    #newspaper { column-count:3; column-gap:20px; padding:20px; background:#fafafa; }
+    #newspaper h2 { column-span:all; }
+    #newspaper img { float:left; margin:10px; width:150px; }
+
+    /* Master Layout */
+    #master .hero { background:url('hero.jpg') center/cover no-repeat; height:300px; display:flex; justify-content:center; align-items:center; color:#fff; font-size:2em; }
+    #master .about { display:flex; padding:20px; }
+    #master .about img { width:200px; margin-left:20px; }
+    #master .services { display:flex; }
+    #master .services div { flex:1; margin:10px; padding:20px; border:1px solid #ccc; }
+    #master .contact { padding:20px; }
+    #master footer { text-align:center; padding:1em; background:#222; color:#fff; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Combined CSS Assignment</h1>
+  <nav>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#info">Info</a>
+    <a href="#team">Team</a>
+    <a href="#article">Article</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+    <a href="#dashboard">Dashboard</a>
+    <a href="#newspaper">Newspaper</a>
+    <a href="#master">Master</a>
+  </nav>
+</header>
+
+<section id="portfolio">
+  <h2>Portfolio</h2>
+  <p>Short bio paragraph.</p>
+  <img src="profile.jpg" alt="Profile">
+</section>
+
+<section id="info">
+  <h2>Informational Webpage</h2>
+  <section class="linear"><h3>History</h3><p>...</p></section>
+  <section class="radial"><h3>Culture</h3><p>...</p></section>
+</section>
+
+<section id="team">
+  <div class="card lead"><h3>Alice</h3><p>Team Lead</p></div>
+  <div class="card"><h3>Bob</h3><p>Developer</p></div>
+  <div class="card"><h3>Carol</h3><p>Designer</p></div>
+</section>
+
+<section id="article">
+  <h2>Article Title</h2>
+  <h3>By Author - Date</h3>
+  <p><mark>Important</mark> text paragraph one.</p>
+  <p>Paragraph two...</p>
+  <blockquote>Highlighted quote.</blockquote>
+</section>
+
+<section id="pricing">
+  <div class="plan"><h3>Basic</h3><p>$10</p></div>
+  <div class="plan popular"><h3>Standard</h3><p>$20</p></div>
+  <div class="plan"><h3>Premium</h3><p>$30</p></div>
+</section>
+
+<section id="gallery">
+  <img src="img1.jpg" alt="">
+  <img src="img2.jpg" alt="">
+  <img src="img3.jpg" alt="">
+  <img src="img4.jpg" alt="">
+  <img src="img5.jpg" alt="">
+  <img src="img6.jpg" alt="">
+</section>
+
+<section id="contact">
+  <form>
+    <input type="text" placeholder="Name">
+    <input type="email" placeholder="Email">
+    <input type="text" placeholder="Subject">
+    <textarea placeholder="Message"></textarea>
+    <button type="submit">Send</button>
+  </form>
+</section>
+
+<section id="dashboard">
+  <aside>Sidebar</aside>
+  <main>
+    <div class="box">Content 1</div>
+    <div class="box">Content 2</div>
+  </main>
+</section>
+
+<section id="newspaper">
+  <h2>Newspaper Layout</h2>
+  <img src="news.jpg" alt="">
+  <p>Column text goes here...</p>
+</section>
+
+<section id="master">
+  <div class="hero">Welcome</div>
+  <div class="about"><p>About section text...</p><img src="about.jpg" alt=""></div>
+  <div class="services">
+    <div>Service 1</div>
+    <div>Service 2</div>
+    <div>Service 3</div>
+  </div>
+  <div class="contact">
+    <form><input type="text" placeholder="Name"><button>Submit</button></form>
+  </div>
+  <footer>&copy; 2026 Combined Layout</footer>
+</section>
+
+<footer>
+  <p>End of Assignment</p>
+</footer>
+
+</body>
+</html>
